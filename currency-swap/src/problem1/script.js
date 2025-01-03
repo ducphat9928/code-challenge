@@ -19,13 +19,16 @@ document
   .getElementById("calculateButton")
   .addEventListener("click", function () {
     const n = parseInt(document.getElementById("numberInput").value, 10);
-    if (isNaN(n) || n < 0) {
+
+    if (isNaN(n) || n < 1) {
       document.getElementById("result").innerText =
         "Please enter a valid positive number.";
       return;
     }
 
     const result = sum_to_n_b(n);
+
+    // Display the result
     document.getElementById(
       "result"
     ).innerText = `The sum from 1 to ${n} is ${result}`;
